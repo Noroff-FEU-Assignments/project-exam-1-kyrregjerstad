@@ -11,12 +11,12 @@
 
 <a class="card" href="/{post.id}">
 	<div class="image-container">
-		<img src={PUBLIC_API_BASE_URL + url || ""} alt="thumbnail" />
+		<img src={PUBLIC_API_BASE_URL + url || ""} alt="{title} thumbnail" />
 	</div>
 	<div class="card-text">
 		<h2>#{id}</h2>
-		<h3>{title}</h3>
 		<h4>{date}</h4>
+		<h3>{title}</h3>
 	</div>
 </a>
 
@@ -65,7 +65,7 @@
 	.card-text {
 		display: flex;
 		flex-direction: column;
-		justify-content: space-between;
+		/* justify-content: space-between; */
 		height: 100%;
 		padding: 0.5rem;
 		position: relative;
@@ -76,11 +76,23 @@
 		transition: all var(--transition-short);
 	}
 
-	h4 {
+	h2,
+	h3 {
 		font-size: 1rem;
 	}
 
+	h4 {
+		display: none;
+	}
+
 	@media (min-width: 48rem) {
+		h2 {
+			font-size: 1.5rem;
+		}
+		h4 {
+			display: block;
+			font-size: 1rem;
+		}
 		.card {
 			line-height: 1.5;
 		}

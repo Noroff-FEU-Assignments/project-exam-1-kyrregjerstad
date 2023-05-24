@@ -68,7 +68,7 @@
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 
 <div class="container">
-	<button on:click|stopPropagation={prev} class="button">
+	<button on:click|stopPropagation={prev} class="button buttons-desktop">
 		<Icon icon="material-symbols:arrow-circle-left-outline-rounded" width="50" />
 	</button>
 	<div class="posts">
@@ -82,9 +82,17 @@
 			</div>
 		{/each}
 	</div>
-	<button on:click|stopPropagation={next} class="button next">
+	<button on:click|stopPropagation={next} class="button buttons-desktop next">
 		<Icon icon="material-symbols:arrow-circle-left-outline-rounded" width="50" hFlip />
 	</button>
+	<div class="buttons-mobile">
+		<button on:click|stopPropagation={prev} class="button">
+			<Icon icon="material-symbols:arrow-circle-left-outline-rounded" width="50" />
+		</button>
+		<button on:click|stopPropagation={next} class="button next">
+			<Icon icon="material-symbols:arrow-circle-left-outline-rounded" width="50" hFlip />
+		</button>
+	</div>
 </div>
 
 <style>
@@ -92,18 +100,18 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		flex-direction: column;
+		margin-block: 1rem;
 	}
 	.posts {
 		position: relative;
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		gap: 1rem;
-		padding: 1rem;
 		width: 100%;
 	}
 
 	.button {
-		/* position: absolute; */
 		background-color: transparent;
 		border: none;
 		outline: none;
@@ -112,6 +120,17 @@
 		top: 50%;
 		cursor: pointer;
 		transition: all 0.2s ease-in-out;
+	}
+
+	.buttons-desktop {
+		display: none;
+	}
+
+	.buttons-mobile {
+		display: flex;
+		justify-content: space-around;
+		margin-top: 1rem;
+		width: 100%;
 	}
 
 	.button.next {
@@ -124,8 +143,19 @@
 	}
 
 	@media (min-width: 768px) {
+		.buttons-desktop {
+			display: flex;
+		}
+		.buttons-mobile {
+			display: none;
+		}
 		.posts {
+			gap: 1rem;
+			padding: 1rem;
 			grid-template-columns: repeat(4, 1fr);
+		}
+		.container {
+			flex-direction: row;
 		}
 	}
 </style>
