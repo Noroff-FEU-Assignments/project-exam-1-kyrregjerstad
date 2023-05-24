@@ -6,25 +6,11 @@
 	import { addToast } from "$lib/stores/notifications";
 	import ToastWrapper from "$components/ToastWrapper.svelte";
 	import Menu from "$components/Menu.svelte";
-	import { PUBLIC_HOTJAR_SITE_ID, PUBLIC_HOTJAR_VERSION } from "$env/static/public";
-	import { onMount } from "svelte";
-	import { page } from "$app/stores";
 
 	export let data;
 	let menuIsOpen = false;
 	let scrollY = 0;
 	$: ({ posts } = data);
-
-	const siteId = parseInt(PUBLIC_HOTJAR_SITE_ID, 10);
-	const hotjarVersion = parseInt(PUBLIC_HOTJAR_VERSION, 10);
-
-	onMount(() => {
-		Hotjar.init(siteId, hotjarVersion, {
-			debug: true
-		});
-	});
-
-	$: $page, Hotjar.stateChange($page.url.href);
 </script>
 
 <svelte:window bind:scrollY />
