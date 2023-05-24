@@ -93,7 +93,6 @@
 		gap: 1rem;
 		padding: 1rem;
 		width: 100%;
-		background-color: black;
 	}
 
 	.button {

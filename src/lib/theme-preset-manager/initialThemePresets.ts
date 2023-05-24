@@ -1,9 +1,9 @@
 export const initialPresets = [
 	{
 		name: "Dark",
-		primaryColor: "#232536",
+		primaryColor: "#12202b",
 		backgroundColor: "#000807",
-		accentColor: "#103153",
+		accentColor: "#2D4762",
 		textColor: "#f5f5f5",
 		textMultiplier: 1,
 		lineHeight: 1.5,
@@ -21,10 +21,10 @@ export const initialPresets = [
 	},
 	{
 		name: "Solarized",
-		primaryColor: "#073642",
-		backgroundColor: "#fdf6e3",
-		accentColor: "#268bd2",
-		textColor: "#586e75",
+		primaryColor: "#E15303",
+		backgroundColor: "#0F0F00",
+		accentColor: "#FEBB2A",
+		textColor: "#FFFFE7",
 		textMultiplier: 1,
 		lineHeight: 1.5,
 		createdByUser: false
@@ -51,9 +51,9 @@ export const initialPresets = [
 	},
 	{
 		name: "Dracula",
-		primaryColor: "#282a36",
-		backgroundColor: "#21222c",
-		accentColor: "#bd93f9",
+		primaryColor: "#2F0000",
+		backgroundColor: "#B30000",
+		accentColor: "#F81736",
 		textColor: "#f8f8f2",
 		textMultiplier: 1,
 		lineHeight: 1.5,
