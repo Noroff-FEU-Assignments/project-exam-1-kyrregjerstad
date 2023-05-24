@@ -54,14 +54,15 @@
 		z-index: 2000;
 		bottom: 1rem;
 		left: 50%;
-		transform: translateX(-50%);
+		transform: translate(-50%, 300%) scale(0.8);
 		opacity: 0;
-		transition: opacity var(--transition-short);
+		transition: all var(--transition-short) 0.2s;
 		font-weight: bold;
 	}
 
 	.card:hover .hover-indicator {
 		opacity: 1;
+		transform: translate(-50%, 0%) scale(1);
 	}
 
 	.card:before {
