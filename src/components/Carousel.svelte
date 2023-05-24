@@ -65,21 +65,23 @@
 	$: visiblePosts = posts.slice(startIndex, startIndex + maxPosts);
 </script>
 
+<!-- svelte-ignore a11y-click-events-have-key-events -->
+
 <div class="container">
-	{#each visiblePosts as post, i (post.id)}
-		<div
-			in:receive|local={{ key: post.id, delay: i }}
-			out:send|local={{ key: post.id }}
-			animate:flip={{ duration: 1000 }}
-		>
-			<CarouselPost {post} />
-		</div>
-	{/each}
-	<!-- svelte-ignore a11y-click-events-have-key-events -->
 	<button on:click|stopPropagation={prev} class="button">
 		<Icon icon="material-symbols:arrow-circle-left-outline-rounded" width="50" />
 	</button>
-	<!-- svelte-ignore a11y-click-events-have-key-events -->
+	<div class="posts">
+		{#each visiblePosts as post, i (post.id)}
+			<div
+				in:receive|local={{ key: post.id, delay: i }}
+				out:send|local={{ key: post.id }}
+				animate:flip={{ duration: 1000 }}
+			>
+				<CarouselPost {post} />
+			</div>
+		{/each}
+	</div>
 	<button on:click|stopPropagation={next} class="button next">
 		<Icon icon="material-symbols:arrow-circle-left-outline-rounded" width="50" hFlip />
 	</button>
@@ -87,6 +89,11 @@
 
 <style>
 	.container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.posts {
 		position: relative;
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
@@ -96,14 +103,13 @@
 	}
 
 	.button {
-		position: absolute;
+		/* position: absolute; */
 		background-color: transparent;
 		border: none;
 		outline: none;
 		color: var(--color-accent);
 		left: -1rem;
 		top: 50%;
-		transform: translateY(-50%);
 		cursor: pointer;
 		transition: all 0.2s ease-in-out;
 	}
@@ -114,11 +120,11 @@
 	}
 
 	.button:hover {
-		transform: translateY(-50%) scale(1.1);
+		transform: scale(1.1);
 	}
 
 	@media (min-width: 768px) {
-		.container {
+		.posts {
 			grid-template-columns: repeat(4, 1fr);
 		}
 	}
