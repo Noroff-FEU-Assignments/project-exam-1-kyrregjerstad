@@ -1,0 +1,180 @@
+@import url("fonts.css");
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html,
+body {
+	height: 100%;
+	font-family: var(--font-family-primary);
+	background-color: var(--color-background);
+	transition: backgound-color 1s ease-in-out;
+}
+
+body {
+	line-height: var(--line-height-default, 1.5);
+	-webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+	display: block;
+	max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	overflow-wrap: break-word;
+	max-width: 66ch;
+}
+
+ul,
+ol {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+	cursor: pointer;
+}
+
+button {
+	cursor: pointer;
+	background-color: transparent;
+	border: none;
+}
+
+:root {
+	/* Colors */
+	--color-primary: #232536;
+	--color-secondary: #e7d8c9;
+	--color-accent: #103153;
+	--color-background: #000807;
+	--color-primary: #232536;
+	--color-text: #f5f5f5;
+	--color-text-secondary: #b7b7b7;
+	--color-text-accent: #f5f5f5;
+	--link-color: #f5f5f5;
+	--link-color-hover: #f5f5f5;
+
+	/* Typography */
+	--font-family-primary: "Satoshi-Regular", sans-serif;
+	--font-family-secondary: "Satoshi-Regular", sans-serif;
+	--font-family-accent: "Satoshi-Regular", sans-serif;
+	--font-size-S: calc(var(--font-size-multiplier, 1) * 0.875rem);
+	--font-size-M: calc(var(--font-size-multiplier, 1) * 1rem);
+	--font-size-L: calc(var(--font-size-multiplier, 1) * 1.125rem);
+	--font-size-XL: calc(var(--font-size-multiplier, 1) * 1.25rem);
+	--font-size-2XL: calc(var(--font-size-multiplier, 1) * 1.5rem);
+	--font-size-3XL: calc(var(--font-size-multiplier, 1) * 1.875rem);
+	--font-size-4XL: calc(var(--font-size-multiplier, 1) * 2.25rem);
+	--font-size-5XL: calc(var(--font-size-multiplier, 1) * 3rem);
+	--font-size-6XL: calc(var(--font-size-multiplier, 1) * 4rem);
+	--font-weight-light: 300;
+	--font-weight-normal: 400;
+	--font-weight-medium: 500;
+	--font-weight-bold: 700;
+	--font-weight-black: 900;
+	--line-height-default: calc(var(--line-height-multiplier, 1) * 1.5);
+	--line-height-tight: 1.25;
+	--line-height-loose: 2;
+	--letter-spacing-tight: -0.05em;
+	--letter-spacing-normal: 0;
+	--letter-spacing-wide: 0.05em;
+
+	--font-size-multiplier: 1;
+	--line-height-multiplier: 1;
+
+	/* Spacing */
+	--spacing-XXS: 0.25rem;
+	--spacing-XS: 0.5rem;
+	--spacing-SM: 1rem;
+	--spacing-MD: 1.5rem;
+	--spacing-LG: 2rem;
+	--spacing-XL: 3rem;
+	--spacing-XXL: 4rem;
+
+	/* Margin */
+	--margin-XXS: 0.25rem;
+	--margin-XS: 0.5rem;
+	--margin-S: 1rem;
+	--margin-M: 1.5rem;
+	--margin-L: 2rem;
+	--margin-XL: 3rem;
+	--margin-XXL: 4rem;
+
+	/* Padding */
+	--padding-XXS: 0.25rem;
+	--padding-XS: 0.5rem;
+	--padding-S: 1rem;
+	--padding-M: 1.5rem;
+	--padding-L: 2rem;
+	--padding-XL: 3rem;
+	--padding-XXL: 4rem;
+
+	/* Border radius: */
+	--border-radius-none: 0;
+	--border-radius-S: 0.125rem;
+	--border-radius-M: 0.25rem;
+	--border-radius-L: 0.5rem;
+	--border-radius-XL: 1rem;
+	--border-radius-circle: 50%;
+
+	/* Shadows */
+	--shadow-none: none;
+	--shadow-XS: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.2);
+	--shadow-S: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+	--shadow-M: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+	--shadow-L: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+	--shadow-XL: 0 1.5rem 3rem rgba(0, 0, 0, 0.2);
+	--shadow-inner: inset 0 0 0.5rem rgba(0, 0, 0, 0.2);
+
+	/* Z-Index */
+	--z-index-base: 0;
+	--z-index-sticky: 1020;
+	--z-index-fixed: 1030;
+	--z-index-dropdown: 1035;
+	--z-index-modal-backdrop: 1040;
+	--z-index-modal: 1050;
+	--z-index-popover: 1060;
+	--z-index-tooltip: 1070;
+	--z-index-toast: 1080;
+
+	/* Transitions */
+	--transition-short: 0.2s ease-in-out;
+	--transition-medium: 0.4s ease-in-out;
+	--transition-long: 0.6s ease-in-out;
+
+	/* Containers */
+	--container-XS: 20rem;
+	--container-SM: 24rem;
+	--container-MD: 28rem;
+	--container-LG: 32rem;
+	--container-XL: 36rem;
+	--container-2XL: 42rem;
+	--container-3XL: 48rem;
+	--container-4XL: 56rem;
+	--container-5XL: 64rem;
+	--container-6XL: 90rem;
+}

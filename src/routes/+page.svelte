@@ -1,2 +1,37 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script lang="ts">
+	import Carousel from "$components/Carousel.svelte";
+	import PostPreview from "$components/PostPreview.svelte";
+	import type { Posts } from "$lib/types";
+	import * as config from "$lib/config";
+
+	export let data;
+
+	$: ({ posts } = data);
+
+	const sortPosts = (posts: Posts) => [...posts].sort((a, b) => (a.id > b.id ? 1 : -1));
+
+	$: sortedPosts = sortPosts(posts);
+</script>
+
+<svelte:head>
+	<title>{config.title}</title>
+</svelte:head>
+
+<section>
+	<Carousel posts={sortedPosts} />
+	<ul class="posts">
+		{#each sortedPosts as post}
+			<li>
+				<PostPreview {post} />
+			</li>
+		{/each}
+	</ul>
+</section>
+
+<style>
+	ul {
+		display: flex;
+		flex-direction: column;
+		gap: var(--margin-M);
+	}
+</style>
