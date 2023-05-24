@@ -24,7 +24,7 @@
 		required
 		placeholder="Your comment will be subjected to moderation."
 	/>
-	<button type="submit">Comment</button>
+	<button class="button" type="submit">Comment</button>
 </form>
 
 <style>
@@ -32,6 +32,8 @@
 		display: flex;
 		flex-direction: column;
 		line-height: 1.5;
+
+		margin-top: 2rem;
 	}
 
 	label {
@@ -42,8 +44,13 @@
 		padding: 0.5rem;
 	}
 
-	button {
-		align-self: flex-end;
+	.button {
+		margin-top: 1rem;
+		align-self: center;
+		background-color: var(--color-accent);
+		color: var(--color-text);
+		padding: 1rem 2rem;
+		border-radius: var(--border-radius-XL);
 	}
 
 	.weak {
@@ -53,10 +60,22 @@
 
 	.small-fields {
 		display: flex;
+		justify-content: center;
 		gap: 1rem;
 	}
 
+	.block-field {
+		flex: 1;
+	}
 	.block-field * {
 		display: block;
+		width: 100%;
+	}
+
+	@media (max-width: 600px) {
+		.small-fields {
+			width: 100%;
+			flex-direction: column;
+		}
 	}
 </style>
