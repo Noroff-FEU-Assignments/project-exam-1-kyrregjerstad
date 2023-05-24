@@ -1,3 +1,11 @@
+<script>
+	import * as config from "$lib/config";
+</script>
+
+<svelte:head>
+	<title>{config.title} | About</title>
+</svelte:head>
+
 <section>
 	<h1>About Me</h1>
 	<p>

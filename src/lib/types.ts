@@ -82,6 +82,7 @@ export interface IColorPreset {
 export interface FormInput {
 	name: string;
 	email: string;
+	subject: string;
 	message: string;
 }
 

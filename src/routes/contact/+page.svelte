@@ -2,6 +2,7 @@
 	import { enhance } from "$app/forms";
 	import FormInput from "$components/inputs/FormInput.svelte";
 	import { addToast } from "$lib/stores/notifications";
+	import * as config from "$lib/config";
 
 	export let form;
 	let messageSent = false;
@@ -27,9 +28,14 @@
 	}
 </script>
 
+<svelte:head>
+	<title>{config.title} | Contact</title>
+</svelte:head>
+
 <form use:enhance method="POST">
 	<FormInput name="name" required={true} inputType="text" serverResponse={form} />
 	<FormInput name="email" required={true} inputType="email" serverResponse={form} />
+	<FormInput name="subject" required={true} inputType="text" serverResponse={form} />
 	<FormInput name="message" required={true} inputType="message" serverResponse={form} />
 	<button type="submit">{messageSent ? "Sent" : "Send"}</button>
 </form>

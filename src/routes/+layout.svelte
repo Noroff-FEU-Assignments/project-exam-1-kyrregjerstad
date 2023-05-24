@@ -1,16 +1,12 @@
 <script lang="ts">
-	import Hotjar from "@hotjar/browser";
 	import "$styles/app.css";
 	import Header from "$components/Header.svelte";
 	import Footer from "$components/Footer.svelte";
-	import { addToast } from "$lib/stores/notifications";
 	import ToastWrapper from "$components/ToastWrapper.svelte";
 	import Menu from "$components/Menu.svelte";
 
-	export let data;
 	let menuIsOpen = false;
 	let scrollY = 0;
-	$: ({ posts } = data);
 </script>
 
 <svelte:window bind:scrollY />

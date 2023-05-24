@@ -1,6 +1,5 @@
 import { SECRET_API_SEND_MESSAGE } from "$env/static/private";
 import { PUBLIC_API_POST_MESSAGE_URL } from "$env/static/public";
-
 import { postContactFormToDB } from "$lib/server/postContactFormToDB";
 import type { FormResponse } from "$lib/types";
 import { validateAllInputFields } from "$lib/validation";
@@ -12,14 +11,17 @@ export const actions: Actions = {
 
 		const name = String(formData.get("name"));
 		const email = String(formData.get("email"));
+		const subject = String(formData.get("subject"));
 		const message = String(formData.get("message"));
 
-		const errors = validateAllInputFields({ name, email, message });
+		const formFields = { name, email, subject, message };
+
+		const errors = validateAllInputFields(formFields);
 
 		if (Object.keys(errors).length) {
 			const data: FormResponse = {
 				success: false,
-				fields: { name, email, message },
+				fields: formFields,
 				errors
 			};
 
@@ -27,7 +29,7 @@ export const actions: Actions = {
 		} else {
 			const data: FormResponse = {
 				success: true,
-				fields: { name, email, message }
+				fields: formFields
 			};
 
 			try {

@@ -6,6 +6,7 @@
 	import { PUBLIC_API_BASE_URL } from "$env/static/public";
 	import { parseMarkdown } from "$utils/parseMarkdown";
 	import Comment from "$components/Comment.svelte";
+	import * as config from "$lib/config";
 
 	export let data;
 	export let form;
@@ -27,7 +28,7 @@
 </script>
 
 <svelte:head>
-	<title>{post.title}</title>
+	<title>{config.title} | {post.title}</title>
 </svelte:head>
 
 <article class="post">
