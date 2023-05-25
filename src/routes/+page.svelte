@@ -3,6 +3,7 @@
 	import PostPreview from "$components/PostPreview.svelte";
 	import type { Posts } from "$lib/types";
 	import * as config from "$lib/config";
+	import Hero from "$components/Hero.svelte";
 
 	export let data;
 
@@ -18,6 +19,7 @@
 </svelte:head>
 
 <section>
+	<Hero />
 	<Carousel posts={sortedPosts} />
 	<ul class="posts">
 		{#each sortedPosts as post}

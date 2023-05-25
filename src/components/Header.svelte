@@ -1,6 +1,7 @@
 <script lang="ts">
 	import * as config from "$lib/config";
 	import Icon from "@iconify/svelte";
+	import Logo from "./Logo.svelte";
 
 	export let menuIsOpen = false;
 	export let scrollY = 0;
@@ -15,9 +16,10 @@
 
 <nav class:hasScrolled>
 	<div class="nav-content">
-		<a href="/" class="title">
+		<Logo />
+		<!-- <a href="/" class="title">
 			<b>{config.title}</b>
-		</a>
+		</a> -->
 
 		<ul class="links">
 			<li><a href="/about">About</a></li>

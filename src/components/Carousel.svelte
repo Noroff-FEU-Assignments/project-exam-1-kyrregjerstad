@@ -101,7 +101,7 @@
 		justify-content: center;
 		align-items: center;
 		flex-direction: column;
-		margin-block: 1rem;
+		margin-block-end: 1rem;
 	}
 	.posts {
 		position: relative;
