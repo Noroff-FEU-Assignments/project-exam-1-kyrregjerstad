@@ -1,10 +1,40 @@
 <script lang="ts">
 	import { enhance } from "$app/forms";
+	import { createEventDispatcher } from "svelte";
+	import type { CommentWithTimestamps, CommentFromServer } from "$lib/types";
 
-	async function addComment(event: Event) {}
+	const dispatch = createEventDispatcher();
+
+	async function addCommentOptimistically(event: Event) {
+		const form = event.target as HTMLFormElement;
+
+		const comment: CommentWithTimestamps = {
+			username: (form.elements.namedItem("username") as HTMLInputElement).value,
+			email: (form.elements.namedItem("email") as HTMLInputElement).value,
+			body: form.comment.value,
+			commentId: Date.now().toString(),
+			postId: 0,
+			likes: 1,
+			createdAt: new Date().toISOString(),
+			updatedAt: new Date().toISOString(),
+			publishedAt: new Date().toISOString()
+		};
+
+		const commentWrapper: CommentFromServer = {
+			id: Date.now(),
+			attributes: comment
+		};
+
+		dispatch("commentAddedOptimistically", commentWrapper);
+	}
 </script>
 
-<form method="post" action="?/addComment" on:submit|preventDefault={addComment} use:enhance>
+<form
+	method="post"
+	action="?/addComment"
+	on:submit|preventDefault={addCommentOptimistically}
+	use:enhance
+>
 	<div class="small-fields">
 		<div class="block-field">
 			<label for="email">Your Email* <span class="weak">(private)</span></label>

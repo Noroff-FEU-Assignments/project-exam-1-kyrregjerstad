@@ -26,7 +26,6 @@ export async function addCommentToPost(comment: Comment) {
 	try {
 		const res = await fetch(URL, options);
 		const data = await res.json();
-		console.log(data);
 		return data.data.attributes;
 	} catch (error) {
 		console.log(error);

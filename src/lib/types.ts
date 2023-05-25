@@ -39,7 +39,7 @@ export interface Comment {
 	postId: number;
 }
 
-interface CommentWithTimestamps extends Comment {
+export interface CommentWithTimestamps extends Comment {
 	createdAt: string;
 	updatedAt: string;
 	publishedAt: string;

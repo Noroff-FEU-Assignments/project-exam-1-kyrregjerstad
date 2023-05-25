@@ -16,11 +16,7 @@ export function handleModerationResponse(moderation: ModerationResponse, comment
 			status: 201,
 			body: {
 				message: moderation.message,
-				rating: moderation.rating,
-				tempComment: {
-					id: 1000,
-					attributes: comment
-				}
+				rating: moderation.rating
 			}
 		};
 	} else {
@@ -29,11 +25,7 @@ export function handleModerationResponse(moderation: ModerationResponse, comment
 			status: 200,
 			body: {
 				message: moderation.message,
-				rating: moderation.rating,
-				tempComment: {
-					id: 1000,
-					attributes: comment
-				}
+				rating: moderation.rating
 			}
 		};
 	}

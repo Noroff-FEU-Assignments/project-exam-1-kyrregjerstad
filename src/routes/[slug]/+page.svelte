@@ -11,12 +11,11 @@
 	export let data;
 	export let form;
 
+	let pendingLocalComments: CommentFromServer[] = [];
+
 	$: ({ post, comments } = data);
 
 	$: form?.status && handleAddCommentToast(form.status, form.body);
-
-	//TODO fix comment not being displayed locally after adding it
-	$: form?.status && comments.data?.push(form.body.tempComment);
 
 	$: if (comments.data) {
 		comments.data.sort((a: CommentFromServer, b: CommentFromServer) => {
@@ -25,6 +24,10 @@
 	}
 
 	let commentCount = 20;
+
+	function handleOptimisticUpdate(event: CustomEvent<CommentFromServer>) {
+		pendingLocalComments.push(event.detail);
+	}
 </script>
 
 <svelte:head>
@@ -41,9 +44,9 @@
 		</section>
 	</article>
 	<section class="comment-section">
-		<CommentInput />
-		{#each comments.data as comment (comment.id)}
-			<div animate:flip>
+		<CommentInput on:commentAddedOptimistically={(e) => handleOptimisticUpdate(e)} />
+		{#each [...pendingLocalComments, ...comments.data] as comment (comment.id)}
+			<div animate:flip={{ duration: 900 }}>
 				<Comment {comment} />
 			</div>
 		{/each}
