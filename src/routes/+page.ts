@@ -1,5 +1,4 @@
-import { PUBLIC_API_GET_POSTS } from "$env/static/public";
-import { PUBLIC_API_BASE_URL } from "$env/static/public";
+import { PUBLIC_API_BASE_URL, PUBLIC_API_GET_POSTS } from "$env/static/public";
 
 export const load = async ({ url, fetch }) => {
 	const pageSize = Number(url.searchParams.get("pageSize")) || 10;

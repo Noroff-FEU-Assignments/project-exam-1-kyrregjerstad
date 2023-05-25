@@ -1,5 +1,4 @@
-import { PUBLIC_API_GET_POSTS } from "$env/static/private";
-import { PUBLIC_API_BASE_URL } from "$env/static/public";
+import { PUBLIC_API_BASE_URL, PUBLIC_API_GET_POSTS } from "$env/static/public";
 import type { Post } from "$lib/types";
 
 export async function fetchPost(slug: string): Promise<Post | null> {
