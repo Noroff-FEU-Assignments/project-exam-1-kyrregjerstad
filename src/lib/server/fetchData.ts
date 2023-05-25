@@ -1,7 +1,8 @@
 import { SECRET_API_KEY } from "$env/static/private";
 import { PUBLIC_API_BASE_URL } from "$env/static/public";
+import type { Post } from "$lib/types";
 
-export async function fetchPost(slug: string) {
+export async function fetchPost(slug: string): Promise<Post> {
 	const URL = `${PUBLIC_API_BASE_URL}/api/posts/${slug}?populate=*`;
 	const options = {
 		headers: {
@@ -13,7 +14,7 @@ export async function fetchPost(slug: string) {
 	try {
 		const res = await fetch(URL, options);
 		const data = await res.json();
-		return data.data.attributes;
+		return data.data;
 	} catch (error) {
 		console.log(error);
 		return null;

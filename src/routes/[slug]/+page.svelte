@@ -7,11 +7,18 @@
 	import { parseMarkdown } from "$utils/parseMarkdown";
 	import Comment from "$components/Comment.svelte";
 	import * as config from "$lib/config";
+	import ImageModal from "$components/modals/ImageModal.svelte";
 
 	export let data;
 	export let form;
 
+	const imgUrl = `${PUBLIC_API_BASE_URL}${data.post.attributes.image.data.attributes.url}`;
+
+	$: console.log(typeof imgUrl);
+
 	$: ({ post, comments } = data);
+
+	$: console.log(post.attributes);
 
 	$: form?.status && handleAddCommentToast(form.status, form.body);
 
@@ -28,20 +35,13 @@
 </script>
 
 <svelte:head>
-	<title>{config.title} | {post.title}</title>
+	<title>{config.title} | {post.attributes.title}</title>
 </svelte:head>
 
 <article class="post">
-	<div class="image-and-title-wrapper">
-		<h1>{post.title}</h1>
-		<img
-			src={PUBLIC_API_BASE_URL + post.image.data.attributes.url}
-			alt="test 2"
-			class="header-img"
-		/>
-	</div>
+	<ImageModal {post} />
 	<section class="post-body">
-		{@html parseMarkdown(post.body)}
+		{@html parseMarkdown(post.attributes.body)}
 	</section>
 </article>
 <section class="comment-section">
@@ -54,31 +54,6 @@
 </section>
 
 <style>
-	.image-and-title-wrapper {
-		position: relative;
-		overflow: hidden;
-		aspect-ratio: 1/1;
-		width: calc(var(--font-size-multiplier, 1) * 50%);
-		margin: 0 auto;
-		line-height: 1.5;
-	}
-
-	.header-img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		object-position: 0% 10%;
-		position: absolute;
-		top: 0;
-	}
-	h1 {
-		font-size: var(--font-size-6XL, 4rem);
-		background-color: var(--color-primary);
-		display: inline;
-		position: relative;
-		z-index: 1;
-	}
-
 	:global(.post-body) {
 		margin: 0 auto;
 		max-width: 66ch;

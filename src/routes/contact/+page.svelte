@@ -32,15 +32,23 @@
 	<title>{config.title} | Contact</title>
 </svelte:head>
 
-<form use:enhance method="POST">
-	<FormInput name="name" required={true} inputType="text" serverResponse={form} />
-	<FormInput name="email" required={true} inputType="email" serverResponse={form} />
-	<FormInput name="subject" required={true} inputType="text" serverResponse={form} />
-	<FormInput name="message" required={true} inputType="message" serverResponse={form} />
-	<button type="submit">{messageSent ? "Sent" : "Send"}</button>
-</form>
+<section>
+	<form use:enhance method="POST">
+		<FormInput name="name" required={true} inputType="text" serverResponse={form} />
+		<FormInput name="email" required={true} inputType="email" serverResponse={form} />
+		<FormInput name="subject" required={true} inputType="text" serverResponse={form} />
+		<FormInput name="message" required={true} inputType="message" serverResponse={form} />
+		<button type="submit">{messageSent ? "Sent" : "Send"}</button>
+	</form>
+</section>
 
 <style>
+	/* Let's make the section fill the screen, without using vh units! */
+
+	section {
+		min-height: 77vh;
+		display: flex;
+	}
 	form {
 		display: flex;
 		flex-direction: column;
