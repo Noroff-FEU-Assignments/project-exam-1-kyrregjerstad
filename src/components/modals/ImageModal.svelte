@@ -4,6 +4,7 @@
 	import { blur } from "svelte/transition";
 
 	export let post: Post;
+
 	let src = `${PUBLIC_API_BASE_URL}${post.attributes.image.data.attributes.formats.large.url}`;
 
 	let showModal = false;

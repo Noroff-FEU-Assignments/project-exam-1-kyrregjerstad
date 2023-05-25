@@ -3,7 +3,6 @@
 	import { flip } from "svelte/animate";
 	import { handleAddCommentToast } from "$lib/utils/handleToast";
 	import type { CommentFromServer } from "$lib/types.js";
-	import { PUBLIC_API_BASE_URL } from "$env/static/public";
 	import { parseMarkdown } from "$utils/parseMarkdown";
 	import Comment from "$components/Comment.svelte";
 	import * as config from "$lib/config";
@@ -12,13 +11,7 @@
 	export let data;
 	export let form;
 
-	const imgUrl = `${PUBLIC_API_BASE_URL}${data.post.attributes.image.data.attributes.url}`;
-
-	$: console.log(typeof imgUrl);
-
 	$: ({ post, comments } = data);
-
-	$: console.log(post.attributes);
 
 	$: form?.status && handleAddCommentToast(form.status, form.body);
 
@@ -35,23 +28,27 @@
 </script>
 
 <svelte:head>
-	<title>{config.title} | {post.attributes.title}</title>
+	<title>{config.title} | {post?.attributes.title}</title>
 </svelte:head>
 
-<article class="post">
-	<ImageModal {post} />
-	<section class="post-body">
-		{@html parseMarkdown(post.attributes.body)}
+{#if post === null}
+	<p>Sorry, this post could not be found.</p>
+{:else}
+	<article class="post">
+		<ImageModal {post} />
+		<section class="post-body">
+			{@html parseMarkdown(post.attributes.body)}
+		</section>
+	</article>
+	<section class="comment-section">
+		<CommentInput />
+		{#each comments.data as comment (comment.id)}
+			<div animate:flip>
+				<Comment {comment} />
+			</div>
+		{/each}
 	</section>
-</article>
-<section class="comment-section">
-	<CommentInput />
-	{#each comments.data as comment (comment.id)}
-		<div animate:flip>
-			<Comment {comment} />
-		</div>
-	{/each}
-</section>
+{/if}
 
 <style>
 	:global(.post-body) {

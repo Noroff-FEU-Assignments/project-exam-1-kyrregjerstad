@@ -23,11 +23,11 @@ export const actions = {
 		const formData = await request.formData();
 		const comment = createCommentFromFormData(formData, +slug);
 
-		// const moderation = await moderateComment(comment);
-		const moderation = {
-			message: "Comment added",
-			rating: 10
-		};
+		const moderation = await moderateComment(comment);
+		// const moderation = {
+		// 	message: "Comment added",
+		// 	rating: 10
+		// };
 
 		return handleModerationResponse(moderation, comment);
 	},
