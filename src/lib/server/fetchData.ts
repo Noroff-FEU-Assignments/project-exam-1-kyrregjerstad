@@ -1,4 +1,4 @@
-import { SECRET_API_KEY } from "$env/static/private";
+import { PUBLIC_API_GET_POSTS } from "$env/static/private";
 import { PUBLIC_API_BASE_URL } from "$env/static/public";
 import type { Post } from "$lib/types";
 
@@ -7,7 +7,7 @@ export async function fetchPost(slug: string): Promise<Post | null> {
 	const options = {
 		headers: {
 			"Content-Type": "application/json",
-			Authorization: `bearer ${SECRET_API_KEY}`
+			Authorization: `bearer ${PUBLIC_API_GET_POSTS}`
 		}
 	};
 
