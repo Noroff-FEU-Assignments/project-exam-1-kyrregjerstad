@@ -50,8 +50,6 @@ export async function moderateComment(comment: Comment) {
 
 		const moderationObj = stringToObj(message);
 
-		console.log(moderationObj);
-
 		return moderationObj;
 	} catch (error) {
 		console.log(error);

@@ -13,7 +13,6 @@ export async function getCommentsForPost(postId: number | string) {
 	try {
 		const res = await fetch(URL, options);
 		const data = await res.json();
-		console.log(data);
 		return data;
 	} catch (error) {
 		console.log(error);

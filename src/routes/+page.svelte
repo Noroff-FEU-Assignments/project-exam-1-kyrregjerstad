@@ -1,4 +1,6 @@
 <script lang="ts">
+	import LoadMoreButton from "../components/LoadMoreButton.svelte";
+
 	import Carousel from "$components/Carousel.svelte";
 	import PostPreview from "$components/PostPreview.svelte";
 	import type { Posts } from "$lib/types";
@@ -7,18 +9,11 @@
 
 	export let data;
 
-	$: ({ posts } = data);
+	$: ({ posts, pageCount } = data.data);
 
 	$: totalItems = posts.length;
 
 	const sortPosts = (posts: Posts) => [...posts].sort((a, b) => (a.id > b.id ? 1 : -1));
-
-	export let pageSize = 10;
-	$: console.log(totalItems, pageSize);
-
-	function handleLoadMore() {
-		pageSize += 10;
-	}
 
 	$: sortedPosts = sortPosts(posts);
 </script>
@@ -37,12 +32,9 @@
 			</li>
 		{/each}
 	</ul>
-	<a
-		href="?pageSize={pageSize}"
-		data-sveltekit-noscroll
-		on:click={() => handleLoadMore()}
-		class="load-more-button">Load More Posts</a
-	>
+	{#if totalItems < pageCount * 10}
+		<LoadMoreButton />
+	{/if}
 </section>
 
 <style>
