@@ -1,10 +1,9 @@
 <script lang="ts">
-	import LoadMoreButton from "../components/LoadMoreButton.svelte";
-
+	import * as config from "$lib/config";
+	import LoadMoreButton from "$components/LoadMoreButton.svelte";
 	import Carousel from "$components/Carousel.svelte";
 	import PostPreview from "$components/PostPreview.svelte";
 	import type { Posts } from "$lib/types";
-	import * as config from "$lib/config";
 	import Hero from "$components/Hero.svelte";
 	import { page } from "$app/stores";
 
@@ -50,13 +49,5 @@
 		display: flex;
 		flex-direction: column;
 		gap: var(--margin-M);
-	}
-
-	.load-more-button {
-		background-color: var(--color-primary);
-		padding: 1rem;
-		border-radius: 0.5rem;
-		margin: 1rem;
-		align-self: center;
 	}
 </style>
