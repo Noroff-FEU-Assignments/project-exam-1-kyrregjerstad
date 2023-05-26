@@ -4,11 +4,9 @@
 
 	export let post = {} as Post;
 
-	const { id } = post;
-	const { title, body, date } = post.attributes;
-	const { url } = post?.attributes?.image?.data?.attributes?.formats?.medium || "";
-
-	// console.log(post.attributes.image.data.attributes);
+	$: ({ id } = post);
+	$: ({ title, body, date } = post.attributes);
+	$: ({ url } = post?.attributes?.image?.data?.attributes?.formats?.medium || "");
 </script>
 
 <a class="card" href="/{post.id}">

@@ -1,10 +1,15 @@
 <script lang="ts">
 	import Icon from "@iconify/svelte";
+	import type { Page } from "@sveltejs/kit";
+
 	let pageSize = 10;
 
 	export let loading = false;
+	export let page: Page;
 
-	$: console.log(loading);
+	$: href = page.url.search
+		? `${page.url.href}&pageSize=${(pageSize += 10)}`
+		: `${page.url.href}?&pageSize=${(pageSize += 10)}`;
 
 	function handleLoadMore() {
 		loading = true;
@@ -12,11 +17,7 @@
 </script>
 
 {#if !loading}
-	<a
-		href="?pageSize={(pageSize += 10)}"
-		data-sveltekit-noscroll
-		on:click={() => handleLoadMore()}
-		class="load-more-button"
+	<a {href} data-sveltekit-noscroll on:click={() => handleLoadMore()} class="load-more-button"
 		>Load More Posts
 	</a>
 {:else}

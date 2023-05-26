@@ -6,8 +6,13 @@ interface FetchResponse {
 	pageCount: number;
 }
 
-export const fetchManyPosts = async (pageSize = 10): Promise<FetchResponse> => {
-	const URL = `${PUBLIC_API_BASE_URL}/api/posts?&pagination[pageSize]=${pageSize}&populate=*`;
+export const fetchManyPosts = async (
+	pageSize = 10,
+	sortAsc = true,
+	fetch
+): Promise<FetchResponse> => {
+	const sort = sortAsc ? "id:asc" : "id:desc";
+	const URL = `${PUBLIC_API_BASE_URL}/api/posts?sort=${sort}&pagination[pageSize]=${pageSize}&populate=*`;
 	const options = {
 		headers: {
 			"Content-Type": "application/json",

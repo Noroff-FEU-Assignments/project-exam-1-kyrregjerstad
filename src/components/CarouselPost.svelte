@@ -24,7 +24,7 @@
 	.card {
 		border: 1px solid var(--color-accent);
 		border-radius: 4px;
-		aspect-ratio: 4/5;
+		aspect-ratio: 1/1;
 		max-width: 20rem;
 		display: block;
 		background-color: var(--color-primary);
