@@ -1,11 +1,21 @@
 <script lang="ts">
+	import Icon from "@iconify/svelte";
 	import { enhance } from "$app/forms";
 	import { createEventDispatcher } from "svelte";
 	import type { CommentWithTimestamps, CommentFromServer } from "$lib/types";
 
+	export let formResponseStatus: number | null = null;
+	let isLoading = false;
+
+	$: formResponseStatus, (isLoading = false);
+
 	const dispatch = createEventDispatcher();
 
 	async function addCommentOptimistically(event: Event) {
+		isLoading = true;
+		if (formResponseStatus === 200) {
+			return;
+		}
 		const form = event.target as HTMLFormElement;
 
 		const comment: CommentWithTimestamps = {
@@ -54,7 +64,13 @@
 		required
 		placeholder="Your comment will be subjected to moderation."
 	/>
-	<button class="button" type="submit">Comment</button>
+	<button class="button" type="submit">
+		{#if isLoading}
+			<Icon icon="line-md:loading-twotone-loop" width="35" />
+		{:else}
+			Comment
+		{/if}
+	</button>
 </form>
 
 <style>

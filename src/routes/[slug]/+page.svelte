@@ -44,7 +44,10 @@
 		</section>
 	</article>
 	<section class="comment-section">
-		<CommentInput on:commentAddedOptimistically={(e) => handleOptimisticUpdate(e)} />
+		<CommentInput
+			on:commentAddedOptimistically={(e) => handleOptimisticUpdate(e)}
+			formResponseStatus={form?.status}
+		/>
 		{#each [...pendingLocalComments, ...comments.data] as comment (comment.id)}
 			<div animate:flip={{ duration: 900 }}>
 				<Comment {comment} />
