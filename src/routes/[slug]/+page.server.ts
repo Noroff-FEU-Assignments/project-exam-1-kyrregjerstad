@@ -6,6 +6,9 @@ import {
 	handleModerationResponse
 } from "$lib/server";
 import { createCommentFromFormData } from "$utils/createCommentFromData";
+import { SECRET_ENABLE_COMMENT_MODERATION } from "$env/static/private";
+
+console.log(SECRET_ENABLE_COMMENT_MODERATION);
 
 export async function load({ params }) {
 	const { slug } = params;
@@ -23,11 +26,17 @@ export const actions = {
 		const formData = await request.formData();
 		const comment = createCommentFromFormData(formData, +slug);
 
-		const moderation = await moderateComment(comment);
-		// const moderation = {
-		// 	message: "Comment added",
-		// 	rating: 10
-		// };
+		const isModerationEnabled = SECRET_ENABLE_COMMENT_MODERATION === "true";
+
+		let moderation;
+		if (isModerationEnabled) {
+			moderation = await moderateComment(comment);
+		} else {
+			moderation = {
+				message: "Comment moderation is disabled.",
+				rating: 10
+			};
+		}
 
 		return handleModerationResponse(moderation, comment);
 	},
