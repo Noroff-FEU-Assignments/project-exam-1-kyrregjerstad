@@ -6,8 +6,12 @@
 	import type { Posts } from "$lib/types";
 	import * as config from "$lib/config";
 	import Hero from "$components/Hero.svelte";
+	import { page } from "$app/stores";
 
 	export let data;
+
+	let isLoading = false;
+	$: $page, (isLoading = false);
 
 	$: ({ posts, pageCount } = data.data);
 
@@ -33,7 +37,7 @@
 		{/each}
 	</ul>
 	{#if totalItems < pageCount * 10}
-		<LoadMoreButton />
+		<LoadMoreButton loading={isLoading} />
 	{/if}
 </section>
 
