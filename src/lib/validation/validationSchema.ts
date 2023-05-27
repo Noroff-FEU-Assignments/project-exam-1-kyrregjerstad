@@ -7,7 +7,10 @@ const nameValidation: ValidatorOptions = {
 
 const subjectValidation: ValidatorOptions = {
 	minLength: 15,
-	regExValidator: { regEx: "^[a-zA-Z\\s]{3,}$", error: "Invalid subject format." }
+	regExValidator: {
+		regEx: '^[a-zA-Z0-9æøåÆØÅ\\s!"@#$&/()=?+´`.,]{3,}$',
+		error: "Invalid subject format."
+	}
 };
 
 const emailValidation: ValidatorOptions = {
