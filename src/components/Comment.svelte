@@ -22,14 +22,16 @@
 	<p class="comment-body">
 		{comment.attributes.body}
 	</p>
-	<div class="comment-likes">
-		{comment.attributes.likes}
-	</div>
-	<div>
-		<form action="?/handleLike" method="post" on:submit={handleLike} use:enhance>
-			<input type="hidden" name="id" value={comment.attributes.commentId} />
-			<button type="submit">❤️</button>
-		</form>
+	<div class="likes-wrapper">
+		<div class="comment-likes">
+			{comment.attributes.likes}
+		</div>
+		<div>
+			<form action="?/handleLike" method="post" on:submit={handleLike} use:enhance>
+				<input type="hidden" name="id" value={comment.attributes.commentId} />
+				<button type="submit">❤️</button>
+			</form>
+		</div>
 	</div>
 </div>
 
@@ -55,6 +57,11 @@
 		font-size: 1.2rem;
 		margin-block: 1rem;
 		color: var(--color-text);
+	}
+
+	.likes-wrapper {
+		display: flex;
+		gap: 0.5rem;
 	}
 
 	button {
