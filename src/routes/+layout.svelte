@@ -5,12 +5,14 @@
 	import ToastWrapper from "$components/ToastWrapper.svelte";
 	import Menu from "$components/Menu.svelte";
 	import { page } from "$app/stores";
+	import MetaTags from "$components/SEO/MetaTags.svelte";
 
 	let menuIsOpen = false;
 	let scrollY = 0;
 </script>
 
 <svelte:window bind:scrollY />
+<MetaTags />
 
 <ToastWrapper />
 <Menu bind:menuIsOpen />
