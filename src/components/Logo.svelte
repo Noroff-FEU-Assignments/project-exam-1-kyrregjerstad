@@ -3,7 +3,7 @@
 	<h4>WEB</h4>
 </a>
 
-<style>
+<style lang="postcss">
 	a {
 		border: solid 1px var(--color-accent);
 		padding: 0.2rem 0.7rem;

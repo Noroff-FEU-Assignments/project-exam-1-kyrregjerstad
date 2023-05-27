@@ -26,7 +26,7 @@
 	</div>
 {/if}
 
-<style>
+<style lang="postcss">
 	.load-more-button {
 		display: flex;
 		align-items: center;

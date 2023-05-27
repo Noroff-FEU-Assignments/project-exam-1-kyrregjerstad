@@ -127,10 +127,6 @@
 		transition: all var(--transition-short);
 	}
 
-	.body-text {
-		text-align: justify;
-	}
-
 	h4 {
 		font-size: 1rem;
 	}

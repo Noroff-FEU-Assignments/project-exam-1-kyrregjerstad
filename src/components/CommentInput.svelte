@@ -73,7 +73,7 @@
 	</button>
 </form>
 
-<style>
+<style lang="postcss">
 	form {
 		display: flex;
 		flex-direction: column;
