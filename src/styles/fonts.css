@@ -1,0 +1,69 @@
+@font-face {
+	font-family: "Satoshi-Black";
+	src: url("/assets/fonts/Satoshi/woff2/Satoshi-Black.woff2") format("woff2");
+	font-weight: 900;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Satoshi-BlackItalic";
+	src: url("/assets/fonts/Satoshi/woff2/Satoshi-BlackItalic.woff2") format("woff2");
+	font-weight: 900;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: "Satoshi-Bold";
+	src: url("/assets/fonts/Satoshi/woff2/Satoshi-Bold.woff2") format("woff2");
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Satoshi-BoldItalic";
+	src: url("/assets/fonts/Satoshi/woff2/Satoshi-BoldItalic.woff2") format("woff2");
+	font-weight: bold;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: "Satoshi-Italic";
+	src: url("/assets/fonts/Satoshi/woff2/Satoshi-Italic.woff2") format("woff2");
+	font-weight: normal;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: "Satoshi-Light";
+	src: url("/assets/fonts/Satoshi/woff2/Satoshi-Light.woff2") format("woff2");
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Satoshi-LightItalic";
+	src: url("/assets/fonts/Satoshi/woff2/Satoshi-LightItalic.woff2") format("woff2");
+	font-weight: 300;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: "Satoshi-Medium";
+	src: url("/assets/fonts/Satoshi/woff2/Satoshi-Medium.woff2") format("woff2");
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Satoshi-MediumItalic";
+	src: url("/assets/fonts/Satoshi/woff2/Satoshi-MediumItalic.woff2") format("woff2");
+	font-weight: 500;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: "Satoshi-Regular";
+	src: url("/assets/fonts/Satoshi/woff2/Satoshi-Regular.woff2") format("woff2");
+	font-weight: normal;
+	font-style: normal;
+}
