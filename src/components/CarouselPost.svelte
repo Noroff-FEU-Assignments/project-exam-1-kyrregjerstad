@@ -65,7 +65,6 @@
 	.card-text {
 		display: flex;
 		flex-direction: column;
-		/* justify-content: space-between; */
 		height: 100%;
 		padding: 0.5rem;
 		position: relative;
@@ -85,13 +84,30 @@
 		display: none;
 	}
 
-	@media (min-width: 48rem) {
+	@media (min-width: 1024px) {
 		h2 {
 			font-size: 1.5rem;
 		}
 		h4 {
 			display: block;
 			font-size: 1rem;
+		}
+		.card {
+			line-height: 1.5;
+		}
+	}
+
+	@media (min-width: 1440px) {
+		h2 {
+			font-size: 2rem;
+		}
+
+		h3 {
+			font-size: 1.5rem;
+		}
+		h4 {
+			display: block;
+			font-size: 1.5rem;
 		}
 		.card {
 			line-height: 1.5;

@@ -1,5 +1,4 @@
 <script lang="ts">
-	import * as config from "$lib/config";
 	import Icon from "@iconify/svelte";
 	import Logo from "./Logo.svelte";
 

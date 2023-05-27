@@ -2,7 +2,6 @@
 	import { flip } from "svelte/animate";
 	import type { Posts } from "$lib/types";
 	import CarouselPost from "./CarouselPost.svelte";
-	import { fly, fade } from "svelte/transition";
 	import { crossfade } from "svelte/transition";
 	import { quintOut } from "svelte/easing";
 	import Icon from "@iconify/svelte";
