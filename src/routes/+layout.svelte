@@ -29,6 +29,7 @@
 		margin-inline: auto;
 		padding-inline: var(--padding-L);
 		max-inline-size: var(--container-6XL);
+		padding-top: 2rem;
 
 		background-color: var(--color-background);
 		color: var(--color-text);

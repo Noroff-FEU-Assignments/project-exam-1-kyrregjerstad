@@ -45,6 +45,8 @@
 		width: calc(var(--font-size-multiplier, 1) * 50%);
 		margin: 0 auto;
 		line-height: 1.5;
+
+		cursor: pointer;
 	}
 
 	.header-img {
@@ -75,6 +77,8 @@
 		background-color: rgba(0, 0, 0, 0.8);
 		backdrop-filter: blur(5px);
 		z-index: 100;
+
+		cursor: pointer;
 	}
 
 	.modal-img {
