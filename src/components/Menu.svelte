@@ -16,6 +16,9 @@
 
 	import type { IColorPreset } from "$lib/types";
 	export let menuIsOpen = false;
+	export let currentPage = "";
+
+	$: isTextModificationAvailable = currentPage !== "/";
 
 	let hasLoaded = false;
 	let isModalOpen = false;
@@ -95,9 +98,11 @@
 		<ColorInput label="Background Color" bind:value={selectedPreset.backgroundColor} />
 		<ColorInput label="Accent Color" bind:value={selectedPreset.accentColor} />
 		<ColorInput label="Text Color" bind:value={selectedPreset.textColor} />
-		<h3>Text</h3>
-		<RangeSelector label={"Text Size"} bind:value={selectedPreset.textMultiplier} />
-		<RangeSelector label={"Line Height"} bind:value={selectedPreset.lineHeight} min={1} max={2} />
+		<div class="text-section" class:disabled={isTextModificationAvailable === false}>
+			<h3>Article Text</h3>
+			<RangeSelector label={"Text Size"} bind:value={selectedPreset.textMultiplier} />
+			<RangeSelector label={"Line Height"} bind:value={selectedPreset.lineHeight} min={1} max={2} />
+		</div>
 		<div class="preset-selector-group">
 			<select name="presets" id="presets" class="preset-select" on:change={handlePresetChange}>
 				Color Presets
@@ -136,6 +141,14 @@
 		box-shadow: var(--shadow-L);
 		line-height: 1.5;
 		border-radius: var(--border-radius-L);
+	}
+
+	.text-section {
+	}
+
+	.disabled {
+		opacity: 0.5;
+		pointer-events: none;
 	}
 
 	h3 {

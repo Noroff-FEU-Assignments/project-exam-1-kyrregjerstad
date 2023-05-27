@@ -15,7 +15,7 @@
 <MetaTags />
 
 <ToastWrapper />
-<Menu bind:menuIsOpen />
+<Menu bind:menuIsOpen currentPage={$page.url.pathname} />
 <div class="layout">
 	<Header bind:menuIsOpen {scrollY} pathName={$page.url.pathname} />
 	<main>
