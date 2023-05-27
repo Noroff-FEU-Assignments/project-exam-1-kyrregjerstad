@@ -41,13 +41,10 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://blog.kyrre.dev/)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 ### Built With
 
 - [![SvelteKit][kit.svelte.dev]][SvelteKit-url]
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+- [![TypeScript][typescript-badge]][typescript-url]
 
 ## Getting Started
 
@@ -94,6 +91,10 @@ Use the package manager you want, I prefer [pnpm](https://pnpm.io/).
 6. If you want to use the moderation feature, set `SECRET_ENABLE_COMMENT_MODERATION=true`
 
 7. If you are using the moderation feature, get your OpenAI API key from [https://beta.openai.com/](https://beta.openai.com/) and set it as `SECRET_OPENAI_API_KEY=YOUR_API_KEY`
+8. Start the development server
+   ```sh
+   pnpm run dev
+   ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -112,3 +113,5 @@ Project Link: [https://github.com/kyrregjerstad/noroff-exam-blog-year-1](https:/
 [product-screenshot]: static/assets/images/screenshot-1.png
 [kit.svelte.dev]: https://img.shields.io/badge/SvelteKit-FF3E00?style=for-the-badge&logo=svelte&logoColor=white
 [SvelteKit-url]: https://kit.svelte.dev/
+[typescript-badge]: https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white
+[typeScript-url]: https://www.typescriptlang.org/
