@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { Post } from "$lib/types";
 	import { PUBLIC_API_BASE_URL } from "$env/static/public";
+	import { parseMarkdown } from "$utils/parseMarkdown";
 
 	export let post = {} as Post;
 
@@ -16,7 +17,7 @@
 	<div class="card-text">
 		<h2>#{id} {title}</h2>
 		<h4>{date}</h4>
-		<p class="body-text">{body}</p>
+		{@html parseMarkdown(body)}
 	</div>
 	<p class="hover-indicator">Click to view</p>
 </a>
