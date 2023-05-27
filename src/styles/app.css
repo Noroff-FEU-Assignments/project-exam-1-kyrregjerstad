@@ -65,6 +65,10 @@ button {
 	border: none;
 }
 
+hr {
+	margin-block: 4rem;
+}
+
 :root {
 	/* Colors */
 	/* initialThemePresets.ts  */
