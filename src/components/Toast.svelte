@@ -50,6 +50,9 @@
 	.success {
 		background: MediumSeaGreen;
 	}
+	.warning {
+		background: orange;
+	}
 	.info {
 		background: SkyBlue;
 	}
