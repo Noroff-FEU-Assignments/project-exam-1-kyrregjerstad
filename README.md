@@ -1,3 +1,5 @@
+<!-- This template can be found at:  https://github.com/othneildrew/Best-README-Template -->
+
 <a name="readme-top"></a>
 
 <br />
@@ -105,9 +107,6 @@ Kyrre Gjerstad - [@kyrregjerstad](https://twitter.com/kyrregjerstad) - hi@kyrre.
 Project Link: [https://github.com/kyrregjerstad/noroff-exam-blog-year-1](https://github.com/kyrregjerstad/noroff-exam-blog-year-1)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
 [linkedin-url]: https://linkedin.com/in/kyrre-gjerstad
 [product-screenshot]: static/assets/images/screenshot-1.png
