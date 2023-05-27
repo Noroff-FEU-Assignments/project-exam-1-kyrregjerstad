@@ -16,10 +16,17 @@
 
 <div class="sort-by-container">
 	Sort by:
-	<a href="?sortBy=asc" class:active={sortByLatest} on:click={() => handleClick("Latest")}>Latest</a
+	<a
+		href="?sortBy=asc"
+		class:active={sortByLatest}
+		on:click={() => handleClick("Latest")}
+		data-sveltekit-noscroll>Latest</a
 	>
-	<a href="?sortBy=desc" class:active={!sortByLatest} on:click={() => handleClick("Oldest")}
-		>Oldest</a
+	<a
+		href="?sortBy=desc"
+		class:active={!sortByLatest}
+		on:click={() => handleClick("Oldest")}
+		data-sveltekit-noscroll>Oldest</a
 	>
 </div>
 
