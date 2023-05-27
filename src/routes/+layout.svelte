@@ -27,7 +27,7 @@
 <style>
 	.layout {
 		margin-inline: auto;
-		padding-inline: var(--padding-L);
+		padding-inline: var(--padding-S);
 		max-inline-size: var(--container-6XL);
 		padding-top: 2rem;
 
@@ -39,6 +39,12 @@
 	main {
 		padding-block: var(--padding-XXL);
 		margin-top: 2rem;
+	}
+
+	@media (min-width: 35rem) {
+		.layout {
+			padding-inline: var(--padding-L);
+		}
 	}
 
 	@media (min-width: 90rem) {

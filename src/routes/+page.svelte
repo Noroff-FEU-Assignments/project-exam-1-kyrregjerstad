@@ -40,7 +40,7 @@
 		<Carousel {posts} />
 		<SortPostsBySelector bind:sortByLatest page={$page} />
 		<ul class="posts">
-			{#each posts as post (post.id)}
+			{#each posts as post}
 				<li>
 					<PostPreview {post} />
 				</li>

@@ -5,7 +5,6 @@
 
 	export let post = {} as Post;
 
-	$: ({ id } = post);
 	$: ({ title, body, date } = post.attributes);
 	$: ({ url } = post?.attributes?.image?.data?.attributes?.formats?.medium || "");
 </script>
@@ -15,7 +14,7 @@
 		<img src={PUBLIC_API_BASE_URL + url || ""} alt="{title} thumbnail" />
 	</div>
 	<div class="card-text">
-		<h3>#{id} {title}</h3>
+		<h3>{title}</h3>
 		<h4>{date}</h4>
 		{@html parseMarkdown(body)}
 	</div>

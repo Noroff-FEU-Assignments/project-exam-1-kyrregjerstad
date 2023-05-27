@@ -106,13 +106,6 @@
 		flex-direction: column;
 		margin-block-end: 1rem;
 	}
-	.posts {
-		position: relative;
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		gap: 1rem;
-		width: 100%;
-	}
 
 	.button {
 		background-color: transparent;
@@ -145,7 +138,15 @@
 		transform: scale(1.1);
 	}
 
-	@media (min-width: 768px) {
+	.posts {
+		position: relative;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 0.5rem;
+		width: 100%;
+	}
+
+	@media (min-width: 48rem) {
 		.buttons-desktop {
 			display: flex;
 		}
@@ -157,9 +158,9 @@
 			display: none;
 		}
 		.posts {
-			gap: 1rem;
 			padding: 1rem;
 			grid-template-columns: repeat(4, 1fr);
+			gap: 1rem;
 		}
 		.container {
 			flex-direction: row;

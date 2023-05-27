@@ -4,8 +4,7 @@
 
 	export let post = {} as Post;
 
-	const { id } = post;
-	const { title, body, date } = post.attributes;
+	const { title } = post.attributes;
 	const { url } = post.attributes.image.data.attributes.formats.small || "";
 </script>
 
@@ -14,9 +13,7 @@
 		<img src={PUBLIC_API_BASE_URL + url || ""} alt="{title} thumbnail" />
 	</div>
 	<div class="card-text">
-		<h2>#{id}</h2>
-		<h3>{date}</h3>
-		<h4>{title}</h4>
+		<h2>{title}</h2>
 	</div>
 </a>
 
@@ -75,40 +72,17 @@
 		transition: all var(--transition-short);
 	}
 
-	h2,
-	h4 {
-		font-size: 1rem;
+	h2 {
+		font-size: clamp(1rem, 3vw, 1.875rem);
 	}
 
-	h3 {
-		display: none;
-	}
-
-	@media (min-width: 1024px) {
+	@media (min-width: 48rem) {
 		h2 {
-			font-size: 1.5rem;
-		}
-		h3 {
-			display: block;
-			font-size: 1rem;
-		}
-		.card {
-			line-height: 1.5;
+			font-size: clamp(1rem, 2vw, 1.875rem);
 		}
 	}
 
 	@media (min-width: 1440px) {
-		h2 {
-			font-size: 2rem;
-		}
-
-		h4 {
-			font-size: 1.5rem;
-		}
-		h3 {
-			display: block;
-			font-size: 1.5rem;
-		}
 		.card {
 			line-height: 1.5;
 		}
