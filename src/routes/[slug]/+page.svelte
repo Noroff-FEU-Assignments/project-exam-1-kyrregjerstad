@@ -67,6 +67,8 @@
 	:global(.post-body :is(h1, h2, h3, h4, h5, h6)) {
 		font-size: var(--font-size-3XL, 1.875rem);
 		margin-block-start: 3rem;
+		text-align: left;
+		line-height: 1.2;
 	}
 
 	.comment-section {
