@@ -37,11 +37,15 @@
 		color: var(--color-text);
 		padding: 0.2rem 0.5rem;
 		border-radius: var(--border-radius-L);
-		transition: var(--transition-medium) background-color;
+		transition: var(--transition-medium) all;
 	}
 
 	a.active {
 		background-color: var(--color-text);
 		color: var(--color-background);
+	}
+
+	a:not(.active):hover {
+		filter: brightness(1.2);
 	}
 </style>
