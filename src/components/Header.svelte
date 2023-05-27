@@ -27,6 +27,7 @@
 			</li>
 		</ul>
 		<button on:click|stopPropagation={() => (menuIsOpen = true)}>
+			<span class="visually-hidden">Open Menu</span>
 			<Icon icon="carbon:settings-adjust" height={30} color={"var(--color-text)"} />
 		</button>
 	</div>

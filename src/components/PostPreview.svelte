@@ -12,7 +12,7 @@
 
 <a class="card" href="/{post.id}">
 	<div class="image-container">
-		<img src={PUBLIC_API_BASE_URL + url || ""} alt="thumbnail" />
+		<img src={PUBLIC_API_BASE_URL + url || ""} alt="{title} thumbnail" />
 	</div>
 	<div class="card-text">
 		<h2>#{id} {title}</h2>

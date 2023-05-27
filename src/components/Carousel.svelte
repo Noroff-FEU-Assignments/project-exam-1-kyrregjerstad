@@ -68,6 +68,7 @@
 
 <div class="container">
 	<button on:click|stopPropagation={prev} class="button buttons-desktop">
+		<span class="visually-hidden">Prev</span>
 		<Icon icon="material-symbols:arrow-circle-left-outline-rounded" width="50" />
 	</button>
 	<div class="posts">
@@ -82,13 +83,16 @@
 		{/each}
 	</div>
 	<button on:click|stopPropagation={next} class="button buttons-desktop next">
+		<span class="visually-hidden">Next</span>
 		<Icon icon="material-symbols:arrow-circle-left-outline-rounded" width="50" hFlip />
 	</button>
 	<div class="buttons-mobile">
 		<button on:click|stopPropagation={prev} class="button">
+			<span class="visually-hidden">Prev</span>
 			<Icon icon="material-symbols:arrow-circle-left-outline-rounded" width="50" />
 		</button>
 		<button on:click|stopPropagation={next} class="button next">
+			<span class="visually-hidden">next</span>
 			<Icon icon="material-symbols:arrow-circle-left-outline-rounded" width="50" hFlip />
 		</button>
 	</div>
