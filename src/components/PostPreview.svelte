@@ -15,7 +15,7 @@
 		<img src={PUBLIC_API_BASE_URL + url || ""} alt="{title} thumbnail" />
 	</div>
 	<div class="card-text">
-		<h2>#{id} {title}</h2>
+		<h3>#{id} {title}</h3>
 		<h4>{date}</h4>
 		{@html parseMarkdown(body)}
 	</div>
@@ -132,13 +132,13 @@
 	}
 
 	@media (max-width: 30rem) {
-		h2 {
+		h3 {
 			font-size: 1.2rem;
 		}
 	}
 
 	@media (min-width: 70rem) {
-		h2 {
+		h3 {
 			font-size: 2.5rem;
 		}
 	}

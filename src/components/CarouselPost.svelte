@@ -15,8 +15,8 @@
 	</div>
 	<div class="card-text">
 		<h2>#{id}</h2>
-		<h4>{date}</h4>
-		<h3>{title}</h3>
+		<h3>{date}</h3>
+		<h4>{title}</h4>
 	</div>
 </a>
 
@@ -76,11 +76,11 @@
 	}
 
 	h2,
-	h3 {
+	h4 {
 		font-size: 1rem;
 	}
 
-	h4 {
+	h3 {
 		display: none;
 	}
 
@@ -88,7 +88,7 @@
 		h2 {
 			font-size: 1.5rem;
 		}
-		h4 {
+		h3 {
 			display: block;
 			font-size: 1rem;
 		}
@@ -102,10 +102,10 @@
 			font-size: 2rem;
 		}
 
-		h3 {
+		h4 {
 			font-size: 1.5rem;
 		}
-		h4 {
+		h3 {
 			display: block;
 			font-size: 1.5rem;
 		}
