@@ -57,8 +57,9 @@
 		position: absolute;
 		top: 0;
 	}
+
 	h1 {
-		font-size: var(--font-size-6XL, 4rem);
+		font-size: var(--font-size-1XL);
 		background-color: var(--color-primary);
 		display: inline;
 		position: relative;
@@ -85,5 +86,23 @@
 		max-width: 80vw;
 		max-height: 80vh;
 		object-fit: cover;
+	}
+
+	@media (min-width: 480px) {
+		h1 {
+			font-size: var(--font-size-2XL, 4rem);
+		}
+	}
+
+	@media (min-width: 761px) {
+		h1 {
+			font-size: var(--font-size-4XL, 4rem);
+		}
+	}
+
+	@media (min-width: 1024px) {
+		h1 {
+			font-size: var(--font-size-6XL, 4rem);
+		}
 	}
 </style>
