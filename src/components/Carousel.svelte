@@ -145,6 +145,10 @@
 		.buttons-desktop {
 			display: flex;
 		}
+
+		.buttons-desktop:hover {
+			filter: brightness(1.2);
+		}
 		.buttons-mobile {
 			display: none;
 		}
