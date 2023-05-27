@@ -4,6 +4,7 @@
 	import Footer from "$components/Footer.svelte";
 	import ToastWrapper from "$components/ToastWrapper.svelte";
 	import Menu from "$components/Menu.svelte";
+	import { page } from "$app/stores";
 
 	let menuIsOpen = false;
 	let scrollY = 0;
@@ -14,7 +15,7 @@
 <ToastWrapper />
 <Menu bind:menuIsOpen />
 <div class="layout">
-	<Header bind:menuIsOpen {scrollY} />
+	<Header bind:menuIsOpen {scrollY} pathName={$page.url.pathname} />
 	<main>
 		<slot />
 	</main>

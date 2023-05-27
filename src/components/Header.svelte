@@ -5,6 +5,8 @@
 	export let menuIsOpen = false;
 	export let scrollY = 0;
 
+	export let pathName = "";
+
 	let hasScrolled = false;
 	$: if (scrollY > 50) {
 		hasScrolled = true;
@@ -17,8 +19,12 @@
 	<div class="nav-content">
 		<Logo />
 		<ul class="links">
-			<li><a href="/about">About</a></li>
-			<li><a href="/contact">Contact</a></li>
+			<li>
+				<a href="/about" class:selected={pathName === "/about"}>About</a>
+			</li>
+			<li>
+				<a href="/contact" class:selected={pathName === "/contact"}>Contact</a>
+			</li>
 		</ul>
 		<button on:click|stopPropagation={() => (menuIsOpen = true)}>
 			<Icon icon="carbon:settings-adjust" height={30} color={"var(--color-text)"} />
@@ -64,6 +70,10 @@
 	.links {
 		display: flex;
 		gap: 1rem;
+	}
+
+	.selected {
+		font-weight: bold;
 	}
 
 	@media (min-width: 768px) {
