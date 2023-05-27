@@ -17,15 +17,10 @@
 <nav class:hasScrolled>
 	<div class="nav-content">
 		<Logo />
-		<!-- <a href="/" class="title">
-			<b>{config.title}</b>
-		</a> -->
-
 		<ul class="links">
 			<li><a href="/about">About</a></li>
 			<li><a href="/contact">Contact</a></li>
 		</ul>
-
 		<button on:click|stopPropagation={() => (menuIsOpen = true)}>
 			<Icon icon="carbon:settings-adjust" height={30} color={"var(--color-text)"} />
 		</button>
@@ -40,7 +35,7 @@
 		background-color: var(--color-primary);
 		color: var(--color-text);
 
-		padding-block: 2rem;
+		padding-block: 1.5rem;
 		padding-inline: 1rem;
 		line-height: 1.5;
 
@@ -55,7 +50,7 @@
 	}
 
 	nav.hasScrolled {
-		padding-block: 1rem;
+		padding-block: 0.5rem;
 		box-shadow: var(--shadow-XS);
 	}
 

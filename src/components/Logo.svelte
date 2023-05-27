@@ -6,7 +6,7 @@
 <style>
 	a {
 		border: solid 1px var(--color-accent);
-		padding: 0.3rem 0.8rem;
+		padding: 0.2rem 0.7rem;
 		aspect-ratio: 1/1;
 		transition: all var(--transition-short);
 
@@ -18,6 +18,7 @@
 	}
 
 	h4 {
+		font-size: 1rem;
 		background: -webkit-linear-gradient(45deg, var(--color-accent), var(--color-text));
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
