@@ -39,5 +39,11 @@
 		align-self: center;
 
 		width: 10rem;
+
+		transition: filter var(--transition-short);
+
+		&:hover {
+			filter: brightness(1.3);
+		}
 	}
 </style>
