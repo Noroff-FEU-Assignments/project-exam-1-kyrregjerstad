@@ -97,6 +97,11 @@
 		color: var(--color-text);
 		padding: 1rem 2rem;
 		border-radius: var(--border-radius-XL);
+		transition: filter var(--transition-short);
+
+		&:hover {
+			filter: brightness(1.2);
+		}
 	}
 
 	.weak {
