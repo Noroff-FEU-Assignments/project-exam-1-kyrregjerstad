@@ -33,7 +33,7 @@
 		}}
 		transition:blur
 	>
-		<img {src} alt={post.attributes.title} class="modal-img" />
+		<img {src} alt={post.attributes.title} class="modal-img" on:click|stopPropagation />
 	</div>
 {/if}
 
