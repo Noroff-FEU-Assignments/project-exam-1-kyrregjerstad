@@ -58,14 +58,6 @@
 		top: 0;
 	}
 
-	h1 {
-		font-size: var(--font-size-1XL);
-		background-color: var(--color-primary);
-		display: inline;
-		position: relative;
-		z-index: 1;
-	}
-
 	.modal {
 		position: fixed;
 		top: 0;
@@ -88,21 +80,11 @@
 		object-fit: cover;
 	}
 
-	@media (min-width: 480px) {
-		h1 {
-			font-size: var(--font-size-2XL, 4rem);
-		}
-	}
-
-	@media (min-width: 761px) {
-		h1 {
-			font-size: var(--font-size-4XL, 4rem);
-		}
-	}
-
-	@media (min-width: 1024px) {
-		h1 {
-			font-size: var(--font-size-6XL, 4rem);
-		}
+	h1 {
+		font-size: clamp(1rem, 5vw, 4rem);
+		background-color: var(--color-primary);
+		display: inline;
+		position: relative;
+		z-index: 1;
 	}
 </style>
