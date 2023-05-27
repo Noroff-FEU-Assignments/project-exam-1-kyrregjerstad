@@ -43,18 +43,17 @@
 </section>
 
 <style>
-	/* Let's make the section fill the screen, without using vh units! */
-
 	section {
 		min-height: 77vh;
 		display: flex;
 	}
+
 	form {
 		display: flex;
 		flex-direction: column;
 		width: 100%;
 		max-width: 500px;
-		margin: 0 auto;
+		margin: 2rem auto;
 		gap: 2rem;
 	}
 
