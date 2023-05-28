@@ -108,6 +108,8 @@ Kyrre Gjerstad - [@kyrregjerstad](https://twitter.com/kyrregjerstad) - hi@kyrre.
 
 Project Link: [https://github.com/kyrregjerstad/noroff-exam-blog-year-1](https://github.com/kyrregjerstad/noroff-exam-blog-year-1)
 
+Live Demo: [https://blog.kyrre.dev](https://blog.kyrre.dev)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 [linkedin-url]: https://linkedin.com/in/kyrre-gjerstad
