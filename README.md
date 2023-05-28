@@ -47,6 +47,8 @@
 
 - [![SvelteKit][kit.svelte.dev]][SvelteKit-url]
 - [![TypeScript][typescript-badge]][typescript-url]
+- [![Strapi][strapi-badge]][strapi-url]
+- [![Iconify][iconify-badge]][iconify-url]
 
 ## Getting Started
 
@@ -114,3 +116,7 @@ Project Link: [https://github.com/kyrregjerstad/noroff-exam-blog-year-1](https:/
 [SvelteKit-url]: https://kit.svelte.dev/
 [typescript-badge]: https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white
 [typeScript-url]: https://www.typescriptlang.org/
+[strapi-url]: https://strapi.io/
+[strapi-badge]: https://img.shields.io/badge/Strapi-2E7EEA?style=for-the-badge&logo=strapi&logoColor=white
+[iconify-url]: https://iconify.design/
+[iconify-badge]: https://img.shields.io/badge/Iconify-FFBA08?style=for-the-badge&logo=iconify&logoColor=white
