@@ -1,13 +1,24 @@
 <script lang="ts">
-	import { flip } from "svelte/animate";
-	import type { Posts } from "$lib/types";
 	import CarouselPost from "./CarouselPost.svelte";
 	import { crossfade } from "svelte/transition";
+	import { flip } from "svelte/animate";
 	import { quintOut } from "svelte/easing";
 	import Icon from "@iconify/svelte";
+	import {
+		transitionToNextPosts,
+		transitionToPreviousPosts,
+		getVisiblePosts,
+		setTransitionLock
+	} from "$lib/carousel/carouselLogic";
+
+	import type { Posts } from "$lib/types";
 
 	export let posts: Posts = [];
 	export let maxPosts = 4;
+
+	let startIndex = 0;
+	let isTransitioning = false;
+	const transitionDuration = 1000;
 
 	const [send, receive] = crossfade({
 		duration: (d) => Math.sqrt(d * 200),
@@ -28,46 +39,27 @@
 		}
 	});
 
-	let startIndex = 0;
-
-	// create timeout function on next and prev to ensure that the animation is complete before changing the index
-
-	let isTransitioning = false;
-
-	function next() {
+	async function handleNext() {
 		if (isTransitioning) return;
 		isTransitioning = true;
-		if (startIndex + maxPosts < posts.length) {
-			startIndex += 4;
-		} else {
-			startIndex = 0;
-		}
-		setTimeout(() => {
-			isTransitioning = false;
-		}, 900);
+		startIndex = transitionToNextPosts({ startIndex, maxPosts, posts });
+		isTransitioning = await setTransitionLock(transitionDuration);
 	}
 
-	function prev() {
+	async function handlePrevious() {
 		if (isTransitioning) return;
 		isTransitioning = true;
-
-		if (startIndex > 0) {
-			startIndex -= 4;
-		} else {
-			startIndex = Math.max(posts.length - maxPosts, 0);
-		}
-		setTimeout(() => {
-			isTransitioning = false;
-		}, 900);
+		startIndex = transitionToPreviousPosts({ startIndex, maxPosts, posts });
+		isTransitioning = await setTransitionLock(transitionDuration);
 	}
 
-	$: visiblePosts = posts.slice(startIndex, startIndex + maxPosts);
+	$: visiblePosts = getVisiblePosts({ startIndex, maxPosts, posts });
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 
 <div class="container">
-	<button on:click|stopPropagation={prev} class="button buttons-desktop">
+	<button on:click|stopPropagation={handlePrevious} class="button buttons-desktop">
 		<span class="visually-hidden">Prev</span>
 		<Icon icon="material-symbols:arrow-circle-left-outline-rounded" width="50" />
 	</button>
@@ -76,22 +68,22 @@
 			<div
 				in:receive|local={{ key: post.id, delay: i }}
 				out:send|local={{ key: post.id }}
-				animate:flip={{ duration: 1000 }}
+				animate:flip={{ duration: transitionDuration }}
 			>
 				<CarouselPost {post} />
 			</div>
 		{/each}
 	</div>
-	<button on:click|stopPropagation={next} class="button buttons-desktop next">
+	<button on:click|stopPropagation={handleNext} class="button buttons-desktop next">
 		<span class="visually-hidden">Next</span>
 		<Icon icon="material-symbols:arrow-circle-left-outline-rounded" width="50" hFlip />
 	</button>
 	<div class="buttons-mobile">
-		<button on:click|stopPropagation={prev} class="button">
+		<button on:click|stopPropagation={handlePrevious} class="button">
 			<span class="visually-hidden">Prev</span>
 			<Icon icon="material-symbols:arrow-circle-left-outline-rounded" width="50" />
 		</button>
-		<button on:click|stopPropagation={next} class="button next">
+		<button on:click|stopPropagation={handleNext} class="button next">
 			<span class="visually-hidden">next</span>
 			<Icon icon="material-symbols:arrow-circle-left-outline-rounded" width="50" hFlip />
 		</button>
