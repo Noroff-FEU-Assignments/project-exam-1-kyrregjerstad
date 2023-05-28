@@ -143,9 +143,6 @@
 		border-radius: var(--border-radius-L);
 	}
 
-	.text-section {
-	}
-
 	.disabled {
 		opacity: 0.5;
 		pointer-events: none;

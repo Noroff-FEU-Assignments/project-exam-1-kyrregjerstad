@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Toast from "$components/Toast.svelte";
-	import { dismissToast, toasts, addToast } from "$lib/stores/notifications";
+	import { dismissToast, toasts } from "$lib/stores/notifications";
 	import { fly } from "svelte/transition";
 </script>
 

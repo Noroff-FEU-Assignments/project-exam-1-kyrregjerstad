@@ -1,9 +1,4 @@
 <script lang="ts">
-	import { onMount } from "svelte";
-	import Icon from "@iconify/svelte";
-	import ColorInput from "$components/ColorInput.svelte";
-	import type { IColorPreset } from "$lib/types";
-
 	export let label = "";
 	export let value = 1;
 	export let min = 0.5;
