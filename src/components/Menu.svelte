@@ -46,6 +46,7 @@
 		isModalOpen = false;
 	}
 
+	("@ts-ignore");
 	function closeMenu() {
 		menuIsOpen = false;
 	}

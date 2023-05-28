@@ -9,7 +9,7 @@ interface FetchResponse {
 export const fetchManyPosts = async (
 	pageSize = 10,
 	sortAsc = true,
-	fetch
+	fetch: (input: RequestInfo, init?: RequestInit) => Promise<Response>
 ): Promise<FetchResponse> => {
 	const sort = sortAsc ? "id:asc" : "id:desc";
 	const URL = `${PUBLIC_API_BASE_URL}/api/posts?sort=${sort}&pagination[pageSize]=${pageSize}&populate=*`;
