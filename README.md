@@ -57,7 +57,10 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-Use the package manager you want, I prefer [pnpm](https://pnpm.io/).
+#### ❗This project requires Node.js version 17 or higher.
+
+- Use the package manager you want, I prefer [pnpm](https://pnpm.io/).
+- To quickly switch node versions, i can recommend [nvm](https://github.com/nvm-sh/nvm)
 
 ### Installation
 
